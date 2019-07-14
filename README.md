@@ -1,3 +1,3 @@
 # rtl2mqtt with Dockerfile
 
-https://hub.docker.com/r/roflmao/rtl2mqtt/
+https://cloud.docker.com/repository/docker/bjreppen/rtl2mqtt
