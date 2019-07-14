@@ -7,7 +7,7 @@ services:
 
 before_install:
   - docker build -f Dockerfile -t bjreppen/rtl2mqtt .
-  - docker tag bjreppen/rtl2mqtt bjreppen/rtl2mqtt:$VERSION
+#  - docker tag bjreppen/rtl2mqtt bjreppen/rtl2mqtt:$VERSION
 
 after_success: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
   docker push bjreppen/rtl2mqtt;
