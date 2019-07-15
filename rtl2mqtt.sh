@@ -14,10 +14,4 @@ PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 #
 # Start the listener and enter an endless loop
 #
-/usr/local/bin/rtl_433 -F json |  while read line
-do
-  echo $line
-
-# Raw message to MQTT
-  echo $line  | /usr/bin/mosquitto_pub -h $MQTT_HOST -i RTL_433 -l -t "RTL_433/Raw"
-done
+/usr/local/bin/rtl_433 -R -39 -M level -F "mqtt://mqtt:1883,retain=0,events=rtl_433[/id]"
